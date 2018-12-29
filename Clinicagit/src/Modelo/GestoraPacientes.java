@@ -11,4 +11,30 @@ package Modelo;
  */
 public class GestoraPacientes {
     
+    
+     private static GestoraPacientes gestora = null;
+    private GestoraPacientes() {
+
+    }
+
+    public static GestoraPacientes getIntancia() {
+
+        if (gestora == null) {
+            return gestora = new GestoraPacientes();
+        }
+
+        return gestora;
+
+    }
+
+    public Paciente ObtenerPaciente(String string) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    
+    
+    
+    
+    
+    
+    
 }
