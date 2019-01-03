@@ -5,6 +5,14 @@
  */
 package Modelo;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
+
 /**
  *
  * @author Usuario
@@ -28,7 +36,54 @@ public class GestoraFuncionarios {
 
     }
 
-    public Funcionario ObtenerFuncionario(String string) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public Funcionario ObtenerFuncionario(String NomUsuario) {
+
+        BaseDatos bd = new BaseDatos();   
+        Connection conn = null;     
+        try {
+            conn = bd.getConnection();
+            String query = "select * from Funcionario where NomUsuario = " + NomUsuario ;
+            PreparedStatement ps = conn.prepareStatement(query);
+            ResultSet rs = ps.executeQuery();
+            Funcionario f = new Funcionario();
+            f.setApellido(rs.getString("Apellido"));
+            f.setCelular(rs.getString("Celular"));
+            f.setContraseña(rs.getString("Contraseña"));
+            f.setNombre(rs.getString("Nombre"));
+            f.setNombreUsuario(rs.getString("NomUsuario"));
+            f.setIdFuncionario(rs.getInt("IdFuncionario"));     
+       return f;
+        } catch (Exception e) {
+            try {
+                if (conn != null) {
+                    conn.rollback();
+                }
+            } catch (SQLException sq) {
+            }
+            
+        } finally {
+            try {
+                if (conn != null) {
+                    conn.close();
+                }
+            } catch (SQLException sq) {
+            }
+        }
+     return null;
     }
-}
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    }
