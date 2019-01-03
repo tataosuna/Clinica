@@ -12,7 +12,21 @@ package Modelo;
 public class GestoraEspecialidad {
     
     
+         private static GestoraEspecialidad gestora = null;
     
+     private GestoraEspecialidad() {
+
+    }
+
+    public static GestoraEspecialidad getIntancia() {
+
+        if (gestora == null) {
+            return gestora = new GestoraEspecialidad();
+        }
+
+        return gestora;
+
+    }
     
     
     

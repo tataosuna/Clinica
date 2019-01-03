@@ -11,18 +11,18 @@ import java.util.GregorianCalendar;
  *
  * @author Usuario
  */
-public class Cosulta {    
+public class Consulta {    
     int idcosnulata;
     GregorianCalendar fechaConsulta ;
     Paciente paciente;
     String Descripcion;
     Funcionario funcionario;
 
-    public Cosulta() {
+    public Consulta() {
         
     }
 
-    public Cosulta(GregorianCalendar fechaConsulta, Paciente paciente, String Descripcion, Funcionario funcionario) {
+    public Consulta(GregorianCalendar fechaConsulta, Paciente paciente, String Descripcion, Funcionario funcionario) {
         this.fechaConsulta = fechaConsulta;
         this.paciente = paciente;
         this.Descripcion = Descripcion;
