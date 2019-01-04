@@ -12,6 +12,15 @@ package Modelo;
 public class Especialidad {
     int idEspecialidad;
     String nombre;
+    String descripcion;
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
 
     public int getIdEspecialidad() {
         return idEspecialidad;

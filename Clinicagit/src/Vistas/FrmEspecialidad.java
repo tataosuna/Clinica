@@ -5,18 +5,25 @@
  */
 package Vistas;
 
+import Controladores.EspecialidadController;
+import interfaces.IFrmEspecialidad;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Usuario
  */
-public class FrmEspecialidad extends javax.swing.JDialog {
+public class FrmEspecialidad extends javax.swing.JDialog implements IFrmEspecialidad {
 
     /**
      * Creates new form FrmEspecialidad
      */
+    EspecialidadController controlador;
     public FrmEspecialidad(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        controlador =  new EspecialidadController(this);
+        
     }
 
     /**
@@ -52,6 +59,11 @@ public class FrmEspecialidad extends javax.swing.JDialog {
         jLabel2.setText("Nombre");
 
         jButton1.setText("Agregar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         TxtDescripcion.setColumns(20);
         TxtDescripcion.setRows(5);
@@ -134,8 +146,16 @@ public class FrmEspecialidad extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void txtNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombreActionPerformed
-        // TODO add your handling code here:
+     
     }//GEN-LAST:event_txtNombreActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+if(controlador.AltaEspecialidad())
+    JOptionPane.showMessageDialog(this,"Especialidad Agregada","Correcto", 1);
+else
+    JOptionPane.showMessageDialog(this,"Especialidad No Agregada","Mal", 0);
+
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -191,4 +211,14 @@ public class FrmEspecialidad extends javax.swing.JDialog {
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextField txtNombre;
     // End of variables declaration//GEN-END:variables
+
+    @Override
+    public String getNombreEspecialidad() {
+          return  txtNombre.getText();  }
+
+    @Override
+    public String getDescripcionEspecialidad() 
+    {
+      return TxtDescripcion.getText();
+    }
 }
