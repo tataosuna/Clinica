@@ -14,13 +14,22 @@ import java.util.Objects;
  */
 public class Paciente {
     
-    String nombre;
-    String apellido;
-    GregorianCalendar fechanacimiento;
-    String cedula;
-    String telefono;
-    GregorianCalendar fechaderegistro;
-    String mail;
+   private String nombre;
+    private String apellido;
+     private GregorianCalendar fechanacimiento;
+    private  String cedula;
+     private String telefono;
+     private String celular;
+
+    public String getCelular() {
+        return celular;
+    }
+
+    public void setCelular(String celular) {
+        this.celular = celular;
+    }
+    private  GregorianCalendar fechaderegistro;
+    private  String mail;
 
     @Override
     public int hashCode() {

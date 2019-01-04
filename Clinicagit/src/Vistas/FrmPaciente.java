@@ -5,11 +5,16 @@
  */
 package Vistas;
 
+import Controladores.AltaPacienteController;
+import interfaces.IFrmAltaPaciente;
 import java.awt.Color;
 import java.text.DateFormat;
+import java.text.ParseException;
 import java.util.Enumeration;
 import java.util.GregorianCalendar;
 import java.util.Hashtable;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -17,15 +22,22 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author Cristian
  */
-public class FrmPaciente extends javax.swing.JDialog {
+public class FrmPaciente extends javax.swing.JDialog implements IFrmAltaPaciente{
 
     /**
      * Creates new form FrmPaciente1
      */
+    AltaPacienteController controlador;
     public FrmPaciente(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
-               this.setLocationRelativeTo(FrmPaciente.this);
+        this.setLocationRelativeTo(FrmPaciente.this);
+    controlador = new AltaPacienteController(this);
+        
+    
+        
+    
+    
     }
 
     /**
@@ -53,7 +65,7 @@ public class FrmPaciente extends javax.swing.JDialog {
         TxtTelefono = new javax.swing.JTextField();
         lblApellido2 = new javax.swing.JLabel();
         TxtCelular = new javax.swing.JTextField();
-        TxtCelular1 = new javax.swing.JTextField();
+        TxtMail = new javax.swing.JTextField();
         lblApellido3 = new javax.swing.JLabel();
         TxtFechas = new com.toedter.calendar.JDateChooser();
 
@@ -102,38 +114,40 @@ public class FrmPaciente extends javax.swing.JDialog {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(BtnAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addGap(231, 231, 231)
-                            .addComponent(TxtCelular1))
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addGap(47, 47, 47)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(lblApellido)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel2)
-                                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addComponent(jLabel3)
-                                .addComponent(lblApellido1)
-                                .addComponent(lblApellido2)
-                                .addComponent(lblApellido3))
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addGroup(jPanel1Layout.createSequentialGroup()
-                                    .addGap(21, 21, 21)
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                        .addComponent(TxtTelefono, javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(TxtApellido, javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(TxtNombres, javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(TxtCedula, javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                            .addGap(24, 24, 24)
-                                            .addComponent(jLabel4))
-                                        .addComponent(TxtFechas, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 269, Short.MAX_VALUE)))
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
-                                    .addComponent(TxtCelular, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(231, 231, 231)
+                        .addComponent(TxtMail))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(47, 47, 47)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblApellido)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(jLabel2)
+                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel3)
+                            .addComponent(lblApellido1)
+                            .addComponent(lblApellido2)
+                            .addComponent(lblApellido3))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(21, 21, 21)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(TxtTelefono, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(TxtApellido, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(TxtNombres, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(TxtCedula, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                        .addGap(24, 24, 24)
+                                        .addComponent(jLabel4))
+                                    .addComponent(TxtFechas, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 269, Short.MAX_VALUE)))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
+                                .addComponent(TxtCelular, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(BtnAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(8, 8, 8)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 74, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -179,7 +193,7 @@ public class FrmPaciente extends javax.swing.JDialog {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblApellido3)
-                    .addComponent(TxtCelular1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(TxtMail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
                 .addComponent(BtnAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -212,7 +226,22 @@ public class FrmPaciente extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void BtnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnAgregarActionPerformed
-
+        try {
+            if(controlador.AgregarPaciente()){
+                
+                JOptionPane.showMessageDialog(this,"Paciente Agregado","Correcto",1);
+                
+                
+            }else{
+                
+                JOptionPane.showMessageDialog(this,"Paciente Agregado","Correcto",1);
+                
+                
+            }       } catch (ParseException ex) {
+                
+                          JOptionPane.showMessageDialog(this,"Se ha Pesentado un Error Inesperado Comunicarse con el Programador si el problema persiste","Mal",JOptionPane.ERROR_MESSAGE);
+          
+        }
        
     }//GEN-LAST:event_BtnAgregarActionPerformed
 
@@ -266,8 +295,8 @@ public class FrmPaciente extends javax.swing.JDialog {
     private javax.swing.JTextField TxtApellido;
     private javax.swing.JTextField TxtCedula;
     private javax.swing.JTextField TxtCelular;
-    private javax.swing.JTextField TxtCelular1;
     private com.toedter.calendar.JDateChooser TxtFechas;
+    private javax.swing.JTextField TxtMail;
     private javax.swing.JTextField TxtNombres;
     private javax.swing.JTextField TxtTelefono;
     private javax.swing.JButton jButton1;
@@ -282,6 +311,44 @@ public class FrmPaciente extends javax.swing.JDialog {
     private javax.swing.JLabel lblApellido2;
     private javax.swing.JLabel lblApellido3;
     // End of variables declaration//GEN-END:variables
+
+    @Override
+    public String getcedula() {
+return TxtCedula.getText();
+
+
+    }
+
+    @Override
+    public String getNombres() {
+return TxtNombres.getText();
+    }
+
+    @Override
+    public String getApellidos() {
+return TxtApellido.getText();
+    }
+
+    @Override
+    public String getFechaNac() {
+return TxtFechas.getDateFormatString();
+    }
+
+    @Override
+    public String getTelefono() {
+return TxtTelefono.getText();
+
+    }
+
+    @Override
+    public String getCelular() {
+return TxtCelular.getText();
+    }
+
+    @Override
+    public String getMail() {
+return TxtMail.getText();
+    }
 
      /* public void ListarPacientes() {
         DefaultTableModel modelo = (DefaultTableModel) jTable1.getModel();

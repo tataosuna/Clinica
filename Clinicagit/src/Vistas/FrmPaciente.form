@@ -47,47 +47,49 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <Group type="103" groupAlignment="1" attributes="0">
-                      <Component id="BtnAgregar" min="-2" pref="196" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Group type="102" attributes="0">
-                              <EmptySpace min="-2" pref="231" max="-2" attributes="0"/>
-                              <Component id="TxtCelular1" max="32767" attributes="0"/>
-                          </Group>
-                          <Group type="102" attributes="0">
-                              <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="lblApellido" min="-2" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="1" attributes="0">
-                                      <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel1" min="-2" pref="70" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="lblApellido1" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="lblApellido2" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="lblApellido3" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="-2" pref="231" max="-2" attributes="0"/>
+                          <Component id="TxtMail" max="32767" attributes="0"/>
+                      </Group>
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="lblApellido" min="-2" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="1" attributes="0">
+                                  <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel1" min="-2" pref="70" max="-2" attributes="0"/>
                               </Group>
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Group type="102" attributes="0">
-                                      <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                          <Component id="TxtTelefono" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="TxtApellido" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="TxtNombres" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="TxtCedula" alignment="0" max="32767" attributes="0"/>
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
-                                              <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
-                                          </Group>
-                                          <Component id="TxtFechas" alignment="0" pref="269" max="32767" attributes="0"/>
+                              <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+                              <Component id="lblApellido1" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="lblApellido2" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="lblApellido3" alignment="0" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                      <Component id="TxtTelefono" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="TxtApellido" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="TxtNombres" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="TxtCedula" alignment="0" max="32767" attributes="0"/>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
+                                          <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
                                       </Group>
-                                  </Group>
-                                  <Group type="102" alignment="1" attributes="0">
-                                      <EmptySpace pref="21" max="32767" attributes="0"/>
-                                      <Component id="TxtCelular" min="-2" pref="269" max="-2" attributes="0"/>
+                                      <Component id="TxtFechas" alignment="0" pref="269" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
+                              <Group type="102" alignment="1" attributes="0">
+                                  <EmptySpace pref="21" max="32767" attributes="0"/>
+                                  <Component id="TxtCelular" min="-2" pref="269" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
+                      </Group>
+                      <Group type="102" alignment="1" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="BtnAgregar" min="-2" pref="196" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace pref="74" max="32767" attributes="0"/>
@@ -147,7 +149,7 @@
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="lblApellido3" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="TxtCelular1" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="TxtMail" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace pref="32" max="32767" attributes="0"/>
                   <Component id="BtnAgregar" min="-2" pref="56" max="-2" attributes="0"/>
@@ -257,7 +259,7 @@
         </Component>
         <Component class="javax.swing.JTextField" name="TxtCelular">
         </Component>
-        <Component class="javax.swing.JTextField" name="TxtCelular1">
+        <Component class="javax.swing.JTextField" name="TxtMail">
         </Component>
         <Component class="javax.swing.JLabel" name="lblApellido3">
           <Properties>
