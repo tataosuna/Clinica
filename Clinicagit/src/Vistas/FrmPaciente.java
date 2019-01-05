@@ -10,6 +10,8 @@ import interfaces.IFrmAltaPaciente;
 import java.awt.Color;
 import java.text.DateFormat;
 import java.text.ParseException;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.Enumeration;
 import java.util.GregorianCalendar;
 import java.util.Hashtable;
@@ -330,8 +332,8 @@ return TxtApellido.getText();
     }
 
     @Override
-    public String getFechaNac() {
-return TxtFechas.getDateFormatString();
+    public Calendar getFechaNac() {
+return TxtFechas.getCalendar();
     }
 
     @Override

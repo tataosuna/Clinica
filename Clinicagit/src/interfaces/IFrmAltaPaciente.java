@@ -5,6 +5,8 @@
  */
 package interfaces;
 
+import java.util.Calendar;
+
 /**
  *
  * @author Usuario
@@ -14,7 +16,7 @@ public interface IFrmAltaPaciente {
 public String getcedula();   
 public String getNombres(); 
 public String getApellidos();   
-public String getFechaNac();     
+public Calendar getFechaNac();     
 public String getTelefono();     
 public String getCelular();     
 public String getMail();  
